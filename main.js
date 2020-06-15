@@ -60,6 +60,13 @@ const createCardElement = (card) => {
 
     // 現在のゲームフェーズを見て処理を変える
     if (state.phase === 'done') {
+      // 役の表示
+      // eslint-disable-next-line no-undef
+      const hand = getHandName(state.cardList);
+      const handLabel = document.createElement('div');
+      handLabel.innerText = hand;
+      renderTarget.appendChild(handLabel);
+
       // 次のゲームを開始するボタン
       const nextGameButton = document.createElement('button');
       nextGameButton.innerText = '次のゲームへ';
